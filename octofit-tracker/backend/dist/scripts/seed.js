@@ -1,3 +1,9 @@
+/**
+ * Seed the octofit_db database with test data
+ *
+ * This script initializes the MongoDB database with sample users, teams,
+ * activities, workouts, and leaderboard entries for testing and development.
+ */
 import mongoose from 'mongoose';
 import { User } from '../models/User.js';
 import { Team } from '../models/Team.js';

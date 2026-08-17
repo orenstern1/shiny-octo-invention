@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import apiRoutes from './routes/api.js';
 
 const app = express();
-const port = 8000;
+const port = Number(process.env.PORT || 8000);
 const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/octofit_db';
 
 // Determine API URL based on environment
@@ -38,7 +38,7 @@ async function startServer() {
     console.log('Connected to MongoDB at', mongoUri);
 
     app.listen(port, '0.0.0.0', () => {
-      console.log(`OctoFit Tracker API listening on http://localhost:${port}`);
+      console.log(`OctoFit Tracker API listening on ${apiUrl}`);
     });
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
